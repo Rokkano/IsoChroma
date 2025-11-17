@@ -34,7 +34,6 @@ select = [
     "E", # pycodestyle
     "F", # Pyflakes
     "I", # Isort
-    "D", # pydocstyle Google
 ]
 ignore = [
     "D100", # Missing docstring in public module
@@ -49,9 +48,6 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
 
 # ----------------------- BANDIT ---------------------- #
 # See https://bandit.readthedocs.io/en/1.8.2/config.html for more info
