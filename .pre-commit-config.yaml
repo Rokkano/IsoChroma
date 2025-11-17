@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.6
+    hooks:
+      - id: ruff
+        args: [ "--fix" , "--config=pyproject.toml"]
+      - id: ruff-format
+        args: [ "--config=pyproject.toml" ]
+  # -   repo: https://github.com/PyCQA/bandit
+  #     rev: '1.8.2'
+  #     hooks:
+  #     - id: bandit
+  #       additional_dependencies: [ "bandit[toml]" ]
+  #       args: [ "-c=pyproject.toml" ]
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.379
+    hooks:
+      - id: pyright
+        entry: poetry run pyright -p .
+        types: [python]
+
+  # - repo: meta
+  #   hooks:
+  #   - id: identity
