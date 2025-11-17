@@ -84,7 +84,7 @@ class CylindricalColorSpace(ColorSpace, ABC):
         return np.array([r, theta, z])
 
     def __add__(self, other: Self) -> Self:
-        if type(self) is type(other):
+        if type(self) is not type(other):
             raise ValueError("Cannot use operation on different ColorSpace.")
         a = self._cylindrical_to_cartesian(*self.values)
         b = self._cylindrical_to_cartesian(*other.values)
